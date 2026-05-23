@@ -1,0 +1,17 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
+*.swp
+.vscode/
+
+# LaTeX build artifacts (e.g. when recompiling cv-source/cv.tex)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg

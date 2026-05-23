@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cheikh Seyidi Mohamed Jedou — AI Engineer</title>
+<meta name="description" content="AI Engineer specializing in Deep Learning, Computer Vision, and Multi-Agent Systems — advancing NLP for low-resource African languages. Based in Nouakchott, Mauritania." />
+<meta name="theme-color" content="#0A0E16" />
+<meta name="author" content="Cheikh Seyidi Mohamed Jedou" />
+
+<!-- Canonical & icons -->
+<link rel="canonical" href="https://chkseyidi.github.io/" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="uploads/image.jpeg" />
+
+<!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chkseyidi.github.io/" />
+<meta property="og:title" content="Cheikh Seyidi Mohamed Jedou — AI Engineer" />
+<meta property="og:description" content="AI Engineer specializing in Deep Learning, Computer Vision, and Multi-Agent Systems — advancing NLP for low-resource African languages." />
+<meta property="og:image" content="https://chkseyidi.github.io/uploads/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cheikh Seyidi Mohamed Jedou — AI Engineer: Deep Learning, Computer Vision, Multi-Agent &amp; Agentic AI Systems" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cheikh Seyidi Mohamed Jedou — AI Engineer" />
+<meta name="twitter:description" content="AI Engineer specializing in Deep Learning, Computer Vision, and Multi-Agent Systems — advancing NLP for low-resource African languages." />
+<meta name="twitter:image" content="https://chkseyidi.github.io/uploads/og-card.png" />
+<script>
+  // Apply stored theme before paint to avoid flash. Default = dark.
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     TOKENS
+     ============================================================ */
+  :root {
+    --ink:        #0A0E16;        /* page background */
+    --ink-2:      #0F1421;        /* slightly raised */
+    --ink-3:      #161C2C;        /* card / panel */
+    --ink-rgb:    10, 14, 22;     /* used for translucent nav bg */
+    --hairline:   rgba(255, 255, 255, 0.08);
+    --hairline-2: rgba(255, 255, 255, 0.04);
+
+    --text:       #ECEEF3;
+    --text-soft:  #B5BCCC;
+    --muted:      #7B8597;
+    --muted-2:    #545C6E;
+
+    --accent:     #5B8CFF;        /* electric cobalt */
+    --accent-dim: #2C4699;
+    --accent-glow: rgba(91, 140, 255, 0.18);
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body:    'Inter', system-ui, sans-serif;
+    --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    --maxw: 1280px;
+    --gutter: clamp(20px, 4vw, 64px);
+  }
+
+  :root[data-theme="light"] {
+    --ink:        #F7F8FB;
+    --ink-2:      #FFFFFF;
+    --ink-3:      #F1F3F8;
+    --ink-rgb:    247, 248, 251;
+    --hairline:   rgba(10, 14, 22, 0.14);
+    --hairline-2: rgba(10, 14, 22, 0.06);
+
+    --text:       #0A0E16;
+    --text-soft:  #0F1421;
+    --muted:      #242938;
+    --muted-2:    #3F4656;
+
+    --accent:     #1E3A8A;        /* navy blue — readable on white */
+    --accent-dim: #1E40AF;
+    --accent-glow: rgba(30, 58, 138, 0.22);
+  }
+
+  body { background-color: var(--ink); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+
+  /* ============================================================
+     BASE
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* Faint grid texture (applied only on hero and footer for restraint) */
+  .gridlines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--hairline-2) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--hairline-2) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, rgba(0,0,0,0.7), transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, rgba(0,0,0,0.7), transparent 75%);
+  }
+
+  ::selection { background: var(--accent); color: var(--ink); }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* Custom cursor accent — a small ring that trails the pointer.
+     Disabled on touch / coarse pointer devices. */
+  .cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    width: 28px; height: 28px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: width 0.18s ease, height 0.18s ease, background 0.18s ease, opacity 0.2s ease;
+    z-index: 9999;
+    opacity: 0;
+  }
+  .cursor-ring.is-on-target {
+    width: 54px; height: 54px;
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  @media (hover: none), (pointer: coarse) {
+    .cursor-ring { display: none; }
+  }
+
+  /* ============================================================
+     LAYOUT HELPERS
+     ============================================================ */
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  /* ============================================================
+     NAV
+     ============================================================ */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(var(--ink-rgb), 0.55);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  .nav.is-scrolled {
+    background: rgba(var(--ink-rgb), 0.85);
+    border-bottom-color: var(--hairline);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .mark-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px var(--accent-glow); opacity: 1; }
+    50%      { box-shadow: 0 0 0 8px rgba(91,140,255,0.05); opacity: 0.85; }
+  }
+  .nav-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--hairline);
+    background: transparent;
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    position: relative;
+  }
+  .nav-links a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(91, 140, 255, 0.06);
+    transform: translateY(-1px);
+  }
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+    border: 1px solid var(--hairline);
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
+
+  .theme-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--hairline);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    margin-left: 4px;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  }
+  .theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(91, 140, 255, 0.06);
+    transform: translateY(-1px);
+  }
+  .theme-toggle svg { width: 16px; height: 16px; display: block; }
+  .theme-toggle .icon-moon { display: none; }
+  :root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+  :root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+  /* Hamburger — hidden on desktop, revealed <=760px */
+  .nav-toggle {
+    display: none;
+    align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--hairline);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); color: var(--accent); background: rgba(91,140,255,0.06); }
+  .nav-toggle svg { width: 18px; height: 18px; display: block; }
+  .nav-toggle .icon-close { display: none; }
+  .nav.is-open .nav-toggle .icon-menu { display: none; }
+  .nav.is-open .nav-toggle .icon-close { display: block; }
+
+  @media (max-width: 760px) {
+    .mark-suffix { display: none; }
+    .nav-cta { display: none; }
+    .nav-toggle { display: inline-flex; }
+
+    /* Section links collapse into a dropdown panel below the bar */
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+      padding: 12px var(--gutter) 18px;
+      background: var(--ink-2);
+      border-bottom: 1px solid var(--hairline);
+      box-shadow: 0 24px 48px -24px rgba(0,0,0,0.6);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+    }
+    .nav.is-open .nav-links {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .nav-links a {
+      display: block;
+      text-align: left;
+      font-size: 13px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border-color: transparent;
+    }
+    .nav-links a:hover { transform: none; background: rgba(91,140,255,0.08); }
+  }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 128px 0 80px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg-accent {
+    position: absolute;
+    top: 18%; right: -10%;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .hero .grid-12 { position: relative; z-index: 2; }
+
+  .status-pill {
+    grid-column: 1 / -1;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 6px 14px 6px 12px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.02);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 56px;
+  }
+  .status-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4ADE80;
+    box-shadow: 0 0 8px #4ADE80;
+    animation: pulse-green 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+    50%      { box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+  }
+
+  .hero-name-block { grid-column: 1 / span 9; }
+
+  .hero-kicker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .hero-kicker .slash { color: var(--accent); margin: 0 8px; }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(48px, 9vw, 140px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    margin: 0;
+    color: var(--text);
+  }
+  .hero-name .sur { color: var(--text); }
+  .hero-name .also {
+    display: block;
+    font-size: 0.32em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 24px;
+    font-family: var(--font-mono);
+  }
+  .hero-name .also::before {
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin-right: 14px;
+  }
+
+  .hero-role {
+    grid-column: 1 / span 7;
+    margin-top: 56px;
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.3;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--text-soft);
+  }
+  .hero-role b {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .hero-role .accent { color: var(--accent); font-weight: 500; }
+
+  .hero-meta {
+    grid-column: 9 / -1;
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-self: end;
+    padding-left: 24px;
+    border-left: 1px solid var(--hairline);
+  }
+  .hero-meta dt {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    margin-bottom: 4px;
+  }
+  .hero-meta dd {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-soft);
+  }
+
+  /* Profile avatar — sits in row 1, columns 10-12, beside the name */
+  .hero-avatar {
+    grid-column: 10 / -1;
+    align-self: center;
+    justify-self: end;
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 1;
+    margin: 0;
+  }
+  .hero-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow:
+      0 0 0 1px var(--hairline),
+      0 0 0 12px rgba(91, 140, 255, 0.05),
+      0 30px 80px -20px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+  }
+  .hero-avatar:hover img {
+    box-shadow:
+      0 0 0 1px var(--accent),
+      0 0 0 14px rgba(91, 140, 255, 0.10),
+      0 30px 80px -20px rgba(0, 0, 0, 0.55);
+    transform: translateY(-2px);
+  }
+
+  .hero-cta-row {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 16px;
+    margin-top: 64px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--ink);
+  }
+  .btn-primary:hover {
+    background: #7AA3FF;
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    border-color: var(--hairline);
+    color: var(--text);
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .btn svg { width: 14px; height: 14px; }
+
+  /* Circular icon-only buttons (LinkedIn / GitHub in the hero CTA) */
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--hairline);
+    color: var(--text);
+    background: transparent;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+  }
+  .btn-icon:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(91, 140, 255, 0.06);
+    transform: translateY(-1px);
+  }
+  .btn-icon svg { width: 16px; height: 16px; }
+
+  @media (max-width: 900px) {
+    .hero-name-block { grid-column: 1 / -1; }
+    .hero-avatar { grid-column: 1 / -1; justify-self: start; max-width: 110px; margin: 24px 0 0; }
+    .hero-role { grid-column: 1 / -1; }
+    .hero-meta { grid-column: 1 / -1; padding-left: 0; border-left: none; border-top: 1px solid var(--hairline); padding-top: 24px; }
+  }
+
+  /* ============================================================
+     SECTIONS — shared
+     ============================================================ */
+  .section {
+    position: relative;
+    padding: 120px 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .section-header {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 64px;
+  }
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .section-num::after {
+    content: " — ";
+    color: var(--muted-2);
+  }
+  .section-num .label {
+    color: var(--muted);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(36px, 5vw, 64px);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0;
+    max-width: 22ch;
+  }
+
+  /* ============================================================
+     ABOUT
+     ============================================================ */
+  .about-body {
+    grid-column: 4 / span 8;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--text-soft);
+  }
+  .about-body p + p { margin-top: 1.2em; }
+  .about-body em {
+    color: var(--text);
+    font-style: normal;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+  }
+  @media (max-width: 900px) {
+    .about-body { grid-column: 1 / -1; }
+  }
+
+  /* ============================================================
+     EXPERIENCE — timeline
+     ============================================================ */
+  .timeline {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0;
+  }
+  .role {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    padding: 40px 0;
+    border-top: 1px solid var(--hairline);
+    position: relative;
+    transition: background 0.3s ease;
+  }
+  .role:last-child { border-bottom: 1px solid var(--hairline); }
+  .role:hover { background: linear-gradient(90deg, transparent, rgba(91,140,255,0.04), transparent); }
+
+  .role-when {
+    grid-column: 1 / span 2;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+  .role-title {
+    grid-column: 3 / span 6;
+  }
+  .role-title h3 {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-size: clamp(20px, 1.7vw, 24px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .role-title .org {
+    color: var(--accent);
+  }
+  .role-title .place {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .role-body {
+    grid-column: 9 / -1;
+    color: var(--text-soft);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .role-tags {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .role-tags span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    padding: 3px 8px;
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .role { padding: 32px 0; }
+    .role-when { grid-column: 1 / -1; padding-top: 0; margin-bottom: 8px; }
+    .role-title { grid-column: 1 / -1; }
+    .role-body { grid-column: 1 / -1; margin-top: 12px; }
+  }
+
+  /* ============================================================
+     SKILLS
+     ============================================================ */
+  .skills-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .skill-group {
+    grid-column: span 6;
+    padding: 36px 32px 36px 0;
+    border-bottom: 1px solid var(--hairline);
+    position: relative;
+  }
+  .skill-group:nth-child(odd) {
+    border-right: 1px solid var(--hairline);
+  }
+  .skill-group:nth-child(odd) { padding-right: 40px; }
+  .skill-group:nth-child(even) { padding-left: 40px; padding-right: 0; }
+
+  .skill-group-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .skill-group h3 {
+    margin: 0 0 20px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .skill-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-list li {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-soft);
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .skill-list li:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    background: rgba(91,140,255,0.06);
+  }
+
+  @media (max-width: 900px) {
+    .skill-group { grid-column: 1 / -1; padding: 32px 0 !important; border-right: none !important; }
+  }
+
+  /* ============================================================
+     EDUCATION
+     ============================================================ */
+  .edu-list {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .edu {
+    border: 1px solid var(--hairline);
+    background: var(--ink-2);
+    padding: 32px;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .edu:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .edu-when {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+  .edu-degree {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .edu-place {
+    color: var(--text-soft);
+    font-size: 14px;
+  }
+  .edu-body {
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .edu-where {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+  }
+  @media (max-width: 760px) {
+    .edu-list { grid-template-columns: 1fr; }
+  }
+
+  /* ============================================================
+     LANGUAGES
+     ============================================================ */
+  .lang-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .lang {
+    padding: 28px 0;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .lang-name {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1;
+  }
+  .lang-level {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .lang-bar {
+    flex: 1;
+    height: 2px;
+    background: var(--hairline);
+    position: relative;
+    overflow: hidden;
+  }
+  .lang-bar::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; height: 100%;
+    width: var(--lvl, 90%);
+    background: var(--accent);
+  }
+  @media (max-width: 760px) {
+    .lang-row { grid-template-columns: 1fr; }
+  }
+
+  /* ============================================================
+     CONTACT
+     ============================================================ */
+  .contact-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    align-items: end;
+  }
+  .contact-pitch {
+    grid-column: 1 / span 7;
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .contact-pitch .accent { color: var(--accent); }
+
+  .contact-card {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .contact-card a,
+  .contact-card .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-top: 1px solid var(--hairline);
+    transition: color 0.2s ease, padding 0.25s ease;
+    color: var(--text);
+    font-size: 15px;
+  }
+  .contact-card a:last-child { border-bottom: 1px solid var(--hairline); }
+  .contact-card a:hover {
+    color: var(--accent);
+    padding-left: 8px;
+  }
+  .contact-card a .label,
+  .contact-card .contact-row .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-right: 16px;
+    min-width: 80px;
+  }
+  .contact-card a .value,
+  .contact-card .contact-row .value {
+    flex: 1;
+    text-align: right;
+    font-family: var(--font-body);
+  }
+  .contact-card a svg,
+  .contact-card .contact-row svg {
+    width: 14px; height: 14px;
+    margin-left: 12px;
+    color: var(--muted);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .contact-card a:hover svg {
+    color: var(--accent);
+    transform: translate(2px, -2px);
+  }
+
+  @media (max-width: 900px) {
+    .contact-pitch { grid-column: 1 / -1; }
+    .contact-card { grid-column: 1 / -1; margin-top: 24px; }
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer {
+    position: relative;
+    padding: 56px 0 40px;
+    border-top: 1px solid var(--hairline);
+    overflow: hidden;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .footer-inner a:hover { color: var(--accent); }
+  .footer-socials { display: flex; gap: 20px; }
+
+  /* ============================================================
+     SCROLL REVEAL
+     ============================================================ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--rd, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============================================================
+     PHONE REFINEMENTS (<=600px) — tighten desktop-tuned spacing
+     ============================================================ */
+  @media (max-width: 600px) {
+    .hero { padding: 104px 0 72px; }
+    .hero-kicker { margin-bottom: 18px; }
+    .hero-name .also { margin-top: 16px; }
+    .hero-avatar { margin-top: 20px; max-width: 116px; }
+    .hero-role { margin-top: 28px; }
+    .hero-meta { margin-top: 28px; padding-top: 18px; }
+    .hero-cta-row { margin-top: 32px; }
+
+    .section { padding: 80px 0; }
+    .section-header { margin-bottom: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom cursor accent -->
+<div class="cursor-ring" id="cursor" aria-hidden="true"></div>
+
+<!-- ============================== NAV ============================== -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="wrap nav-inner">
+    <a href="#top" class="mark" aria-label="Cheikh Seyidi — home">
+      <span class="mark-dot" aria-hidden="true"></span>
+      <span>Cheikh Seyidi<span class="mark-suffix"> · AI Engineer</span></span>
+    </a>
+    <div class="nav-links" id="nav-links" role="navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions" style="display:flex; align-items:center; gap:10px;">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" title="Toggle light / dark">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+      <a href="#contact" class="nav-cta">Get in touch →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== HERO ============================== -->
+<header class="hero" id="top">
+  <div class="gridlines" aria-hidden="true"></div>
+  <div class="hero-bg-accent" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="grid-12">
+
+      <div class="hero-name-block">
+        <div class="hero-kicker reveal" style="--rd: 60ms">
+          <span>Nouakchott, Mauritania</span>
+          <span class="slash">/</span>
+          <span>13.21° N, 17.28° W</span>
+        </div>
+
+        <h1 class="hero-name reveal" style="--rd: 120ms">
+          Cheikh<br />
+          <span class="sur">Seyidi.</span>
+          <span class="also">Mohamed Jedou</span>
+        </h1>
+      </div>
+
+      <figure class="hero-avatar reveal" style="--rd: 180ms">
+        <img src="uploads/image.jpeg" alt="Cheikh Seyidi Mohamed Jedou" loading="eager" decoding="async" width="220" height="220" />
+      </figure>
+
+      <p class="hero-role reveal" style="--rd: 220ms">
+        <b>AI Engineer</b> specializing in
+        <b>Machine Learning, Computer Vision, and Multi-Agent Systems</b> —
+        advancing <span class="accent">NLP for low-resource African languages</span>.
+      </p>
+
+      <dl class="hero-meta reveal" style="--rd: 320ms">
+        <div>
+          <dt>Focus</dt>
+          <dd>Machine Learning · Computer Vision · Multi-Agent NLP</dd>
+        </div>
+        <div>
+          <dt>Currently</dt>
+          <dd>Freelance agent systems · Independent R&amp;D</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>PyTorch · Transformers · OpenCV · LangGraph · Ultralytics</dd>
+        </div>
+      </dl>
+
+      <div class="hero-cta-row reveal" style="--rd: 420ms">
+        <a class="btn-icon" href="https://www.linkedin.com/in/chkseyidi/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 0 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
+          </svg>
+        </a>
+        <a class="btn-icon" href="https://github.com/chkseyidi" target="_blank" rel="noopener" aria-label="GitHub" id="github-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.02c-3.2.69-3.87-1.54-3.87-1.54-.53-1.34-1.29-1.69-1.29-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.07 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.6.23 2.78.11 3.07.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+          </svg>
+        </a>
+        <a class="btn btn-primary" href="uploads/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          CV
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom-right scroll indicator -->
+  <div style="position:absolute; right: var(--gutter); bottom: 32px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display:flex; align-items:center; gap:10px;" aria-hidden="true">
+    <span>Scroll</span>
+    <span style="display:inline-block; width:28px; height:1px; background:var(--accent);"></span>
+  </div>
+</header>
+
+<!-- ============================== ABOUT ============================== -->
+<section class="section" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="grid-12">
+
+      <div class="section-header reveal">
+        <span class="section-num"><span class="label">About</span></span>
+        <h2 class="section-title" id="about-h">Engineering for the languages everyone else skips.</h2>
+      </div>
+
+      <div class="about-body reveal" style="--rd: 120ms">
+        <p>
+          I'm an <em>AI engineer based in Nouakchott</em>, working across
+          Machine Learning, Computer Vision, and Multi-Agent Systems — with a focus
+          on building NLP and autonomous agents for languages with very little
+          digital footprint.
+        </p>
+        <p>
+          My work spans custom embeddings, semantic search with FAISS, vision
+          models, and multi-agent orchestration with planning, tool-use, and
+          self-correction loops. I've shipped to production for Smart MS SA and
+          built <em>GARini</em>, an intelligent educational assistant for the
+          Mauritanian Ministry of Digital Transformation.
+        </p>
+        <p>
+          I care about <em>quality, scalability, and validation</em> — the dull
+          parts that decide whether an AI system actually survives contact with
+          real users.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== EXPERIENCE ============================== -->
+<section class="section" id="experience" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="grid-12">
+
+      <div class="section-header reveal">
+        <span class="section-num"><span class="label">Experience</span></span>
+        <h2 class="section-title" id="exp-h">Four roles. One thread: shipping AI that holds up.</h2>
+      </div>
+
+      <div class="timeline">
+
+        <article class="role reveal">
+          <div class="role-when">2025 — 2026</div>
+          <div class="role-title">
+            <h3>AI Engineer · <span class="org">Smart MS SA</span></h3>
+            <div class="place">Nouakchott, Mauritania</div>
+          </div>
+          <div class="role-body">
+            Architected and shipped production AI systems spanning Machine Learning,
+            Computer Vision, and NLP for low-resource environments — combining
+            custom embeddings, vision pipelines, and multi-agent orchestration.
+            Owned the full model lifecycle from training through deployment in
+            environments where pre-trained models don't exist.
+            <div class="role-tags">
+              <span>Machine Learning</span>
+              <span>Computer Vision</span>
+              <span>Multi-Agent Systems</span>
+              <span>Production deployment</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-when">2024</div>
+          <div class="role-title">
+            <h3>AI Intern · <span class="org">GARini · Ministry of Digital Transformation</span></h3>
+            <div class="place">Nouakchott, Mauritania</div>
+          </div>
+          <div class="role-body">
+            Developed GARini, an intelligent educational assistant built with Django
+            and advanced AI techniques. Designed semantic search pipelines with FAISS
+            vector indexing, custom embeddings, and contextual reasoning for accurate,
+            domain-specific responses. Implemented prompt engineering, response
+            evaluation, and quality control mechanisms.
+            <div class="role-tags">
+              <span>Django</span>
+              <span>FAISS</span>
+              <span>Agentic AI</span>
+              <span>Prompt engineering</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-when">2022</div>
+          <div class="role-title">
+            <h3>Research Data Engineering · <span class="org">PEV Sahel · G5 Sahel</span></h3>
+            <div class="place">Nouakchott · with Coventry University &amp; UNA</div>
+          </div>
+          <div class="role-body">
+            Research data engineering for a G5 Sahel / Coventry University field
+            investigation. Built pipelines for collection, cleaning, validation,
+            and analytical visualization — supporting investigator training and
+            ensuring data integrity across the study.
+            <div class="role-tags">
+              <span>Data pipelines</span>
+              <span>Data validation</span>
+              <span>Visualization</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-when">Current</div>
+          <div class="role-title">
+            <h3>Freelance · <span class="org">Autonomous AI Agents</span></h3>
+            <div class="place">Remote · multi-agent systems &amp; orchestration</div>
+          </div>
+          <div class="role-body">
+            Designing autonomous agents and multi-agent systems: custom orchestration
+            logic, multi-step planning, tool use and function calling, persistent
+            memory, and execution loops with error recovery and self-correction.
+            Selective freelance engagements on hard agent problems.
+            <div class="role-tags">
+              <span>Multi-Agent Systems</span>
+              <span>Orchestration</span>
+              <span>Planning &amp; tool use</span>
+              <span>Persistent memory</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SKILLS ============================== -->
+<section class="section" id="skills" aria-labelledby="skills-h">
+  <div class="wrap">
+    <div class="grid-12">
+
+      <div class="section-header reveal">
+        <span class="section-num"><span class="label">Skills</span></span>
+        <h2 class="section-title" id="skills-h">Expertise.</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-group reveal">
+          <div class="skill-group-num">01</div>
+          <h3>Machine Learning</h3>
+          <ul class="skill-list">
+            <li>PyTorch</li>
+            <li>Scikit-learn</li>
+            <li>Gradient boosting (XGBoost / LightGBM)</li>
+            <li>Feature engineering</li>
+            <li>Transformer architectures</li>
+            <li>Transfer learning</li>
+            <li>Inference optimization</li>
+            <li>ONNX export</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal" style="--rd: 80ms">
+          <div class="skill-group-num">02</div>
+          <h3>Computer Vision</h3>
+          <ul class="skill-list">
+            <li>OpenCV</li>
+            <li>Object detection (YOLO / Ultralytics)</li>
+            <li>Image segmentation</li>
+            <li>Vision Transformers (ViT)</li>
+            <li>Image preprocessing</li>
+            <li>Data augmentation</li>
+            <li>Transfer learning (vision)</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal" style="--rd: 160ms">
+          <div class="skill-group-num">03</div>
+          <h3>NLP &amp; LLMs</h3>
+          <ul class="skill-list">
+            <li>PEFT / LoRA fine-tuning</li>
+            <li>Custom embeddings</li>
+            <li>Tokenizer design</li>
+            <li>Low-resource NLP</li>
+            <li>Model evaluation</li>
+            <li>Quantization &amp; distillation</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal" style="--rd: 240ms">
+          <div class="skill-group-num">04</div>
+          <h3>Agents &amp; Orchestration</h3>
+          <ul class="skill-list">
+            <li>Multi-agent systems</li>
+            <li>Tool use &amp; function calling</li>
+            <li>Multi-step planning</li>
+            <li>Custom orchestration</li>
+            <li>Persistent memory</li>
+            <li>Execution loops</li>
+            <li>Error recovery · self-correction</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal" style="--rd: 320ms">
+          <div class="skill-group-num">05</div>
+          <h3>Semantic Search &amp; Retrieval</h3>
+          <ul class="skill-list">
+            <li>FAISS · Qdrant</li>
+            <li>Vector indexing</li>
+            <li>Semantic search</li>
+            <li>Contextual reasoning</li>
+            <li>Hybrid retrieval</li>
+            <li>Domain-specific pipelines</li>
+          </ul>
+        </div>
+
+        <div class="skill-group reveal" style="--rd: 400ms">
+          <div class="skill-group-num">06</div>
+          <h3>Engineering &amp; MLOps</h3>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>FastAPI · Django</li>
+            <li>Docker</li>
+            <li>Hugging Face ecosystem</li>
+            <li>ML pipelines</li>
+            <li>Production deployment</li>
+            <li>Monitoring &amp; evaluation</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== EDUCATION ============================== -->
+<section class="section" id="education" aria-labelledby="edu-h">
+  <div class="wrap">
+    <div class="grid-12">
+
+      <div class="section-header reveal">
+        <span class="section-num"><span class="label">Education</span></span>
+        <h2 class="section-title" id="edu-h">Where I trained.</h2>
+      </div>
+
+      <div class="edu-list">
+        <article class="edu reveal">
+          <div class="edu-when">2022 — 2024</div>
+          <div class="edu-degree">Master's in Artificial Intelligence &amp; Big Data</div>
+          <div class="edu-place">Cheikh Anta Diop University (UCAD), ESP</div>
+          <div class="edu-body">
+            Focused on machine learning, deep learning architectures, NLP, and
+            large-scale data processing. Coursework spanning neural networks,
+            distributed systems, statistical modeling, and big data pipelines.
+          </div>
+          <div class="edu-where">Dakar · Senegal</div>
+        </article>
+        <article class="edu reveal" style="--rd: 120ms">
+          <div class="edu-when">2019 — 2022</div>
+          <div class="edu-degree">Bachelor's in Mathematics &amp; Computer Science</div>
+          <div class="edu-place">University of Nouakchott Al Asriya, FST</div>
+          <div class="edu-body">
+            Foundational training in mathematics and computer science — linear
+            algebra, probability, analysis, algorithms, data structures, and
+            programming. The mathematical scaffolding behind everything I do in
+            AI today.
+          </div>
+          <div class="edu-where">Nouakchott · Mauritania</div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LANGUAGES ============================== -->
+<section class="section" id="languages" aria-labelledby="lang-h">
+  <div class="wrap">
+    <div class="grid-12">
+
+      <div class="section-header reveal">
+        <span class="section-num"><span class="label">Languages</span></span>
+        <h2 class="section-title" id="lang-h">Trilingual.</h2>
+      </div>
+
+      <div class="lang-row">
+        <div class="lang reveal">
+          <div class="lang-name">English</div>
+          <div class="lang-level"><span>Advanced</span><div class="lang-bar" style="--lvl: 90%"></div></div>
+        </div>
+        <div class="lang reveal" style="--rd: 100ms">
+          <div class="lang-name">Français</div>
+          <div class="lang-level"><span>Advanced</span><div class="lang-bar" style="--lvl: 92%"></div></div>
+        </div>
+        <div class="lang reveal" style="--rd: 200ms">
+          <div class="lang-name">العربية</div>
+          <div class="lang-level"><span>Advanced</span><div class="lang-bar" style="--lvl: 95%"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section class="section" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="grid-12">
+
+      <div class="section-header reveal">
+        <span class="section-num"><span class="label">Contact</span></span>
+        <h2 class="section-title" id="contact-h">Find me here.</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card reveal" style="--rd: 120ms">
+          <a href="mailto:chkseyidi@gmail.com">
+            <span class="label">Email</span>
+            <span class="value">chkseyidi@gmail.com</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="uploads/cv.pdf" target="_blank" rel="noopener">
+            <span class="label">Resume</span>
+            <span class="value">cv.pdf</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="tel:+22237880885">
+            <span class="label">Phone</span>
+            <span class="value">+222 37 88 08 85</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <div class="contact-row" aria-label="Location">
+            <span class="label">Location</span>
+            <span class="value">Nouakchott, Mauritania</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <a href="https://github.com/chkseyidi" target="_blank" rel="noopener" data-handle="github">
+            <span class="label">GitHub</span>
+            <span class="value">@chkseyidi</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/chkseyidi/" target="_blank" rel="noopener" data-handle="linkedin">
+            <span class="label">LinkedIn</span>
+            <span class="value">in/chkseyidi</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="https://huggingface.co/chkseyidi" target="_blank" rel="noopener" data-handle="huggingface">
+            <span class="label">Hugging Face</span>
+            <span class="value">@chkseyidi</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <div class="gridlines" aria-hidden="true"></div>
+  <div class="wrap footer-inner">
+    <div>© <span id="year">2026</span> · Cheikh Seyidi Mohamed Jedou</div>
+    <div class="footer-socials">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="#top">↑ Top</a>
+    </div>
+    <div>Crafted in Nouakchott · 13.21° N, 17.28° W</div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Year ----------
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- Theme toggle (dark default) ----------
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const applyTheme = (mode) => {
+    if (mode === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      if (themeMeta) themeMeta.setAttribute('content', '#F7F8FB');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (themeMeta) themeMeta.setAttribute('content', '#0A0E16');
+    }
+  };
+  // Sync meta color with the theme applied by the pre-paint script.
+  applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+  themeToggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  // ---------- Nav scroll state ----------
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 16) nav.classList.add('is-scrolled');
+    else nav.classList.remove('is-scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ---------- Mobile menu (hamburger) ----------
+  const navToggle = document.getElementById('nav-toggle');
+  const closeMenu = () => {
+    nav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+  };
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  document.querySelectorAll('#nav-links a').forEach(a => a.addEventListener('click', closeMenu));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+  // ---------- Scroll reveal ----------
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ---------- Custom cursor ring ----------
+  const ring = document.getElementById('cursor');
+  let rx = 0, ry = 0, tx = 0, ty = 0;
+  let shown = false;
+  window.addEventListener('mousemove', (e) => {
+    tx = e.clientX; ty = e.clientY;
+    if (!shown) { ring.style.opacity = '1'; shown = true; }
+  }, { passive: true });
+  window.addEventListener('mouseleave', () => { ring.style.opacity = '0'; shown = false; });
+
+  // hover target detection
+  const targets = 'a, button, .skill-list li, .edu, .role';
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest && e.target.closest(targets)) ring.classList.add('is-on-target');
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest && e.target.closest(targets)) ring.classList.remove('is-on-target');
+  });
+
+  const tick = () => {
+    rx += (tx - rx) * 0.18;
+    ry += (ty - ry) * 0.18;
+    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+</script>
+
+</body>
+</html>

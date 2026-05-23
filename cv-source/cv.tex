@@ -1,0 +1,124 @@
+\documentclass[11pt,a4paper]{extarticle}
+\usepackage[top=0.9cm,bottom=0.9cm,left=1.2cm,right=1.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue]{hyperref}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\definecolor{cvgray}{RGB}{55,55,55}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagenumbering{gobble}
+\newcommand{\cvsection}[1]{%
+  \vspace{0.10cm}
+  \begin{center}
+    \rule{3.5cm}{0.5pt}\hspace{0.30cm}{\large\bfseries #1}\hspace{0.30cm}\rule{3.5cm}{0.5pt}
+  \end{center}
+  \vspace{0.05cm}
+}
+\newcommand{\entry}[4]{%
+\noindent\begin{tabularx}{\textwidth}{@{}p{0.25\textwidth}X@{}}
+\textbullet\ \textbf{#1} & \textbf{#3} \\
+\hspace*{0.45cm}\small #2 & \small #4 \\
+\end{tabularx}\par\vspace{0.10cm}\par\noindent\ignorespaces
+}
+\newcommand{\skillgroup}[2]{%
+\textbf{#1}\par\vspace{0.02cm}%
+\begin{list}{\textbullet}{\leftmargin=0.55cm \itemindent=0pt \labelsep=0.15cm \itemsep=0pt \parsep=0pt \topsep=0pt}%
+\small #2\normalsize
+\end{list}%
+\vspace{0.05cm}\noindent\ignorespaces
+}
+\begin{document}
+\begin{center}
+{\Large\bfseries\color{cvgray} CHEIKH SEYIDI MOHAMED JEDOU}\\[0.15cm]
+{\normalsize AI Engineer \,\textbar\, Machine Learning \,\textbar\, Computer Vision \,\textbar\, Multi-Agent Systems}
+\end{center}
+\vspace{-0.10cm}
+\begin{center}
+{\large\bfseries Personal Details:}\\[0.12cm]
+\textbf{Phone:} +222 37 88 08 85 \quad | \quad
+\textbf{Email:} \href{mailto:chkseyidi@gmail.com}{chkseyidi@gmail.com} \quad | \quad
+\textbf{Address:} Nouakchott, Mauritania
+\end{center}
+\cvsection{Education}
+\entry{2022 -- 2024}{Dakar, Senegal}
+{Master's Degree in Artificial Intelligence and Big Data}
+{Cheikh Anta Diop University, ESP.}
+\entry{2019 -- 2022}{Nouakchott, Mauritania}
+{Bachelor's Degree in Mathematics and Computer Science}
+{University of Nouakchott Al Asriya, FST.}
+\cvsection{Professional Experience}
+\entry{2025 -- 2026}{Nouakchott}
+{AI Engineer -- \href{https://www.smartmssa.com/}{Smart MS SA}:}
+{Architected and shipped production AI systems spanning Machine Learning, Computer Vision, and NLP for low-resource environments --- combining custom embeddings, vision pipelines, and multi-agent orchestration. Owned the full model lifecycle from training through deployment in environments where pre-trained models don't exist.}
+\entry{2024}{Nouakchott}
+{AI Intern -- GARini Project, \href{https://mtnima.gov.mr}{Ministry of Digital Transformation}:}
+{Developed GARini, an intelligent educational assistant built with Django. Designed semantic search pipelines with FAISS vector indexing, custom embeddings, and contextual reasoning to deliver accurate, domain-specific educational responses. Implemented response evaluation and quality control mechanisms for agentic workflows.}
+\entry{2022}{Nouakchott}
+{Research Data Engineering -- PEV Sahel Project, G5 Sahel:}
+{Research data engineering for a G5 Sahel / Coventry University field investigation, in collaboration with the University of Nouakchott Al Asriya. Built pipelines for collection, cleaning, validation, and analytical visualization --- supporting investigator training and ensuring data integrity across the study.}
+\entry{Current}{Remote}
+{Freelance -- Autonomous AI Agents \& Multi-Agent Systems:}
+{Designing autonomous agents and multi-agent systems: custom orchestration logic, multi-step planning, tool use and function calling, persistent memory, and execution loops with error recovery and self-correction. Selective freelance engagements on hard agent problems.}
+\cvsection{Technical Skills}
+\noindent\begin{tabularx}{\textwidth}{@{}XXX@{}}
+\skillgroup{Machine Learning}{%
+\item PyTorch
+\item Scikit-learn
+\item XGBoost \& LightGBM
+\item Feature engineering
+\item Transformer architectures
+\item Transfer learning}
+&
+\skillgroup{Computer Vision}{%
+\item OpenCV
+\item YOLO / Ultralytics
+\item Image segmentation
+\item Vision Transformers (ViT)
+\item Data augmentation
+\item Transfer learning (vision)}
+&
+\skillgroup{NLP \& LLMs}{%
+\item PEFT / LoRA fine-tuning
+\item Custom embeddings
+\item Tokenizer design
+\item Low-resource NLP
+\item Model evaluation
+\item Quantization \& distillation}
+\\
+\skillgroup{Agents \& Orchestration}{%
+\item Multi-agent systems
+\item Tool use \& function calling
+\item Multi-step planning
+\item Custom orchestration
+\item Persistent memory
+\item Self-correction loops}
+&
+\skillgroup{Semantic Search \& Retrieval}{%
+\item FAISS · Qdrant
+\item Vector indexing
+\item Semantic search
+\item Contextual reasoning
+\item Hybrid retrieval
+\item Domain-specific pipelines}
+&
+\skillgroup{Engineering \& MLOps}{%
+\item Python
+\item FastAPI · Django
+\item Docker
+\item Hugging Face ecosystem
+\item ML pipelines
+\item Production deployment}
+\\
+\end{tabularx}
+\cvsection{Languages}
+\begin{center}
+\begin{tabularx}{0.90\textwidth}{XXX}
+\textbullet\ \textbf{English} & \textbullet\ \textbf{Français} & \textbullet\ \textbf{Arabic} \\
+Advanced & Advanced & Advanced \\
+\end{tabularx}
+\end{center}
+\end{document}
