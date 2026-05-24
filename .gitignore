@@ -15,3 +15,6 @@ Thumbs.db
 *.toc
 *.bbl
 *.blg
+
+# Design-source artifact — large editor page, not part of the published site
+uploads/cadre.html
